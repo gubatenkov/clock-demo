@@ -1,17 +1,67 @@
 ---
-import Container from "@components/container.astro";
-import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
-import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
-import Layout from "@layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
+import Scene from "../components/Scene";
 ---
 
-<Layout title="">
-  <Container>
-    <Hero />
-    <Features />
-    <Logos />
-    <Cta />
-  </Container>
+<Layout title="Clock Demo">
+  <main class="w-full h-full">
+    <header
+      class="container 2xl:py-12 flex items-center justify-between py-8 mx-auto">
+      <a
+        class="bg-gradient-to-r from-[#d04229] via-[#df663f] to-[#f3965d] text-transparent bg-clip-text text-xl font-bold"
+        href="/">
+        Amaspace.
+      </a>
+
+      <nav class="2xl:translate-x-24 translate-x-32">
+        <ul class="flex items-center gap-14 text-base font-medium">
+          <li class="hover:cursor-pointer">How to Start</li>
+          <li class="hover:cursor-pointer">Pricing</li>
+          <li class="hover:cursor-pointer">Portfolio</li>
+        </ul>
+      </nav>
+
+      <ul class="flex gap-4 items-center">
+        <li>
+          <a
+            class="py-[1.125rem] px-6 rounded-full text-base font-bold text-black border border-black inline-block"
+            href="#">
+            14-days Free Trial
+          </a>
+        </li>
+        <li>
+          <a
+            class="py-[1.125rem] px-9 bg-black rounded-full text-base text-white font-bold inline-block"
+            href="#">
+            Get Started
+          </a>
+        </li>
+      </ul>
+    </header>
+    <section class="w-full h-full pt-16 2xl:pt-14">
+      <div class="container h-full mx-auto">
+        <div class="h-full grid grid-cols-[7fr_5fr]">
+          <div class="">
+            <h1
+              class="2xl:text-[5rem] text-6xl font-bold leading-[110%] tracking-[2.8px] mb-6 2xl:leading-tight 2xl:tracking-normal">
+              Bring your <br /> products to life with 3D & AR viewer
+            </h1>
+            <p class="max-w-[38rem] text-black/50 text-lg 2xl:text-xl mb-12">
+              Transform your business with our cutting-edge visualization
+              platform, delivering immersive experiences that drive up revenue,
+              minimize returns and foster brand loyalty.
+            </p>
+            <a
+              class="py-6 px-12 inline-block bg-gradient-to-r from-[#e16c43] to-[#faa869] rounded-full text-white font-bold 2xl:text-2xl text-lg"
+              href="#">
+              Get Started
+            </a>
+          </div>
+          <div class="translate-x-4">
+            <Scene client:only="react" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
